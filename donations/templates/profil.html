@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<header>
+    <div class="slogan container container--90">
+      <div class="slogan--item">
+        <h1>
+          Uzytkownik:
+        </h1>  
+        <h2>
+        <p>Imie: {{current_user.first_name}} </p>
+        <p>Nazwisko: {{current_user.last_name}} </p>
+        <p>email: {{current_user.email}} </p>
+        </h2>     
+      </div>
+    </div>
+  </header>
+
+{% endblock %}
