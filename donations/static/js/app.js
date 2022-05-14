@@ -240,6 +240,25 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$step.parentElement.hidden = this.currentStep >= 6;
 
       // TODO: get data from inputs and show them in summary
+       //wybierz wszystkie zaznaczone checkboxy z kategoriami (document.querySelector(‘[name=categories]::checked’))
+       const CheckedCategs = document.querySelectorAll("[name='categories']:checked");
+       const a = Array.from(CheckedCategs).map(el => el.value)
+       console.log(a);
+       //wydobyc value z wybranych checkboxow -> id categorii
+       //const CatValues = CheckedCategs.dataset.value;
+       //zlap wszystkie div-y ktore maja attrybut data-categories
+       //const divs = document.querySelectorAll("div[data-categories]");
+       //console.log(divs)
+       // dla kazdego div-a (forEach) sprawdz czy ma wszystkie categories ktore sa zaznaczone - jezeli ma to go zostaw, a jak nie to ukryj (style.display=none)
+       //divs.forEach(el => {
+        //const b = el.dataset.categories.split(","); 
+        //console.log(el)
+           //metoda tablicowa "every"
+         //                  });
+       //console.log(b)
+       //const contains = a.every(element => {
+       //  return b.includes(element);
+                                                               //});
     }
 
     /**
