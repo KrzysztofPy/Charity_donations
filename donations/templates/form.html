@@ -59,7 +59,7 @@
             <h3>Zaznacz co chcesz oddać:</h3>
                      
             {%for category in categories%}
-              <div class="form-group form-group--checkbox data-categorydiv="{{category.name}}">
+              <div class="form-group form-group--checkbox" data-category-div="{{category.name}}">
                 <label>
                   <input type="checkbox" name="categories" value="{{category.id}}" />
                   <span class="checkbox"></span>
@@ -186,7 +186,7 @@
 
                   <li>
                     <span class="icon icon-hand"></span>
-                    <span class="summary--text"
+                    <span class="summary--text" id="fundacja-show"
                       >Dla fundacji "Mam marzenie" w Warszawie</span
                     >
                   </li>

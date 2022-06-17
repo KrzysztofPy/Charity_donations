@@ -242,6 +242,7 @@ document.addEventListener("DOMContentLoaded", function() {
       
        //wybierz wszystkie zaznaczone checkboxy z kategoriami (document.querySelector(‘[name=categories]::checked’))
        const CheckedCategs = document.querySelectorAll("[name='categories']:checked");
+       //console.log(CheckedCategs);
        //wydobyc value z wybranych checkboxow -> id categorii
        const a = Array.from(CheckedCategs).map(el => el.value)
        //console.log(a);      
@@ -256,7 +257,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const contains = a.every(element => {
               return b.includes(element);
             });
-            console.log(contains, el);
+            //console.log(contains, el);
             if (contains === false) {
               //console.log("brak");
               el.style.display = "none";
@@ -264,38 +265,25 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
       // TODO: get data from inputs and show them in summary
-      const bagsQuantity = document.querySelector("#bags-input").value;
-      //console.log(bagsQuantity);
-      document.querySelector("#bags-show").innerHTML = "Liczba workow ktora oddajesz: " + bagsQuantity + " , ktore zawieraja:"; 
-      let catDivs = document.querySelectorAll("div[data-categorydiv]");
-      console.log(catDivs);
-      catDivs.forEach(el => {
-        console.log(el)
-        a.forEach(a_el => {
-          console.log(a_el)
-          if (a_el == el.dataset.value) {
-            let textDiv = el.querySelector(".description").innerText;
-            console.log(textDiv);
-          }; 
+      if (CheckedCategs.length > 0) {  
+        let itemsToGive = [];
+        
+        CheckedCategs.forEach(el => {
+          itemsToGive.push(el.parentElement.parentElement.dataset.categoryDiv);
         });
         
-      });
-      //const aa = document.querySelectorAll("[name='categories']:checked").querySelector(".description");
-      //const bb = aa.querySelector(".description");
-      //const aa = document.querySelector(".description")
-      console.log(CheckedCategs)
-      //console.log(aa)
-     /* CheckedCategs.forEach(el => {
-        const CatDescription = el.querySelector(".description").innerText;
-        console.log(CatDescription);
-      }); */
-      
-      //divs.forEach(el => {
-       // console.log(el)
-        //let CatDescription = el.querySelector(".description")
-        //console.log(CatDescription)
-      //});
+        const bagsQuantity = document.querySelector("#bags-input").value;
+        
+        document.querySelector("#bags-show").innerHTML = "Liczba workow ktora oddajesz: " + bagsQuantity + " , ktore zawieraja: " + itemsToGive.join(", "); 
 
+      }
+       
+      const CheckedOrganisation = document.querySelector("[name='organization']:checked");
+      const CheckedOrganisationData = CheckedOrganisation.parentElement.children
+      //console.log(CheckedOrganisationData[2]);
+      const cel_text = CheckedOrganisationData[2].innerText.split("Cel i misja")
+      document.querySelector("#fundacja-show").innerHTML = cel_text[0]; 
+      
       
     }
 
