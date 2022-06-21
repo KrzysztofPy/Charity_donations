@@ -274,8 +274,8 @@ document.addEventListener("DOMContentLoaded", function() {
         
         const bagsQuantity = document.querySelector("#bags-input").value;
         
-        document.querySelector("#bags-show").innerHTML = "Liczba workow ktora oddajesz: " + bagsQuantity + " , ktore zawieraja: " + itemsToGive.join(", "); 
-
+        document.querySelector("#bags-show").innerHTML = "Liczba workow ktora oddajesz: " + bagsQuantity + ", zawierajace: " + itemsToGive.join(", "); 
+        
       }
        
       const CheckedOrganisation = document.querySelector("[name='organization']:checked");
@@ -284,7 +284,25 @@ document.addEventListener("DOMContentLoaded", function() {
       const cel_text = CheckedOrganisationData[2].innerText.split("Cel i misja")
       document.querySelector("#fundacja-show").innerHTML = cel_text[0]; 
       
+      const address_street = document.querySelector("#address-street").value;
+      const address_city = document.querySelector("#address-city").value;
+      const address_postcode = document.querySelector("#address-postcode").value;
+      const address_phone = document.querySelector("#address-phone").value;
       
+      const date_package = document.querySelector("#date-package").value;
+      const time_package = document.querySelector("#time-package").value;
+      const final_remarks = document.querySelector("#final-remarks").value;
+
+      let adres = document.querySelectorAll("#address-details li");
+      adres[0].innerText = address_street;
+      adres[1].innerText = address_city;
+      adres[2].innerText = address_postcode;
+      adres[3].innerText = address_phone;
+
+      let data_odbioru = document.querySelectorAll("#retrival-date li");
+      data_odbioru[0].innerText = date_package;
+      data_odbioru[1].innerText = time_package;
+      data_odbioru[2].innerText = final_remarks;
     }
 
     /**

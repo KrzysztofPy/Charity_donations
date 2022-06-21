@@ -125,22 +125,22 @@
               <div class="form-section--column">
                 <h4>Adres odbioru</h4>
                 <div class="form-group form-group--inline">
-                  <label> Ulica <input type="text" name="address" /> </label>
+                  <label> Ulica <input type="text" name="address" id="address-street"/> </label>
                 </div>
 
                 <div class="form-group form-group--inline">
-                  <label> Miasto <input type="text" name="city" /> </label>
+                  <label> Miasto <input type="text" name="city" id="address-city"/> </label>
                 </div>
 
                 <div class="form-group form-group--inline">
                   <label>
-                    Kod pocztowy <input type="text" name="postcode" />
+                    Kod pocztowy <input type="text" name="postcode" id="address-postcode"/>
                   </label>
                 </div>
 
                 <div class="form-group form-group--inline">
                   <label>
-                    Numer telefonu <input type="phone" name="phone" />
+                    Numer telefonu <input type="phone" name="phone" id="address-phone"/>
                   </label>
                 </div>
               </div>
@@ -148,17 +148,17 @@
               <div class="form-section--column">
                 <h4>Termin odbioru</h4>
                 <div class="form-group form-group--inline">
-                  <label> Data <input type="date" name="data" /> </label>
+                  <label> Data <input type="date" name="data" id="date-package"/> </label>
                 </div>
 
                 <div class="form-group form-group--inline">
-                  <label> Godzina <input type="time" name="time", value="08:00" /> </label>
+                  <label> Godzina <input type="time" name="time", value="08:00" id="time-package"//> </label>
                 </div>
 
                 <div class="form-group form-group--inline">
                   <label>
                     Uwagi dla kuriera
-                    <textarea name="more_info" rows="5"></textarea>
+                    <textarea name="more_info" rows="5" id="final-remarks"></textarea>
                   </label>
                 </div>
               </div>
@@ -194,22 +194,22 @@
               </div>
 
               <div class="form-section form-section--columns">
-                <div class="form-section--column">
+                <div class="form-section--column" id="address-details">
                   <h4>Adres odbioru:</h4>
                   <ul>
-                    <li>Prosta 51</li>
-                    <li>Warszawa</li>
-                    <li>99-098</li>
-                    <li>123 456 789</li>
+                    <li>Placeholder for street</li>
+                    <li>Placeholder for city</li>
+                    <li>Placeholder for postalcode</li>
+                    <li>Placeholder for phone number</li>
                   </ul>
                 </div>
 
-                <div class="form-section--column">
+                <div class="form-section--column" id="retrival-date">
                   <h4>Termin odbioru:</h4>
                   <ul>
-                    <li>13/12/2018</li>
-                    <li>15:40</li>
-                    <li>Brak uwag</li>
+                    <li>Placeholder for date</li>
+                    <li>Placeholder for time</li>
+                    <li>Placeholder for remarks</li>
                   </ul>
                 </div>
               </div>
